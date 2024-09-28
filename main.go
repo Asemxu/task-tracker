@@ -2,28 +2,18 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"os"
+	"task-tracker/utils"
 )
 
 func main() {
-	file, err := os.Open("readme.md")
 	arguments := os.Args[1:]
 	fmt.Println(arguments)
-	if err != nil {
-		log.Fatal(err)
-	}
-	f, err := file.Stat()
 
-	if err != nil {
-		log.Fatal(err)
+	if utils.IsValidArguments(arguments) {
+		fmt.Println("La opcion seleccionada fue " + arguments[0])
+	} else {
+		fmt.Println("No ingreso ninguna opción")
 	}
-	size := f.Size()
-
-	data := make([]byte, size)
-	count, err := file.Read(data)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Printf("read %d bytes: %q\n", count, data[:count])
+	os.Exit(1)
 }
