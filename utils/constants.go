@@ -17,6 +17,14 @@ const LISTTASKSINPROGRESS = "in-progress"
 const DONTHAVEOPTION = "No ingreso ninguna opción"
 const OPTIONNOTVALID = "La opción ingresada no es válida"
 const TOLESSARGUMENTS = "No se han ingresado todos los argumentos necesarios"
+const DONTHAVETASKS = "No se encontraron tareas"
+const DONTFOUNDTASK = "record not found"
+const UPDATINGTASK = "Actualizando la tarea con ID: "
+const SUCCESSUPDATE = "Actualizado con éxito"
+const ADDINGTAKS = "Agregando una tarea..."
+const CANTNOTDELETETASK = "No se logro eliminar el Task con el id "
+const SUCCESSDELETE = "Se ah borrado el task con el Id "
+const GETTINGALLTASKS = "Obteniendo todos los tasks..."
 
 var GETOPTIONSELECTED = func(option string) {
 	fmt.Println("La opción seleccionada fue " + option)
@@ -31,6 +39,8 @@ const ACCEPTCANTARGUMENTSDELETE = 2
 const ACCEPTCANTARGUMENTSMARKTASK = 2
 const ACCEPTCANTARGUMENTSLIST = 1
 const ACCEPTCANTARGUMENTSLISTQUERY = 2
+const EMPTYTASKS = 0
+const EMPTYARGUMENTS = 0
 
 const MARKCREATED = 0
 const MARKPROGRESS = 1

@@ -70,10 +70,13 @@ func main() {
 				var taskShow []models.Task
 				switch optionList {
 				case utils.LISTTASKSDONE:
+					//GET BY TASKS STATUS DONE (0)
 					taskShow = taskService.ListTasks(utils.ISQUERY, strings.ToLower(utils.STATUSFIELD), utils.LISTDONE)
 				case utils.LISTTASKSTODO:
+					//GET BY TASKS STATUS TODO (1)
 					taskShow = taskService.ListTasks(utils.ISQUERY, strings.ToLower(utils.STATUSFIELD), utils.LISTTODO)
 				case utils.LISTTASKSINPROGRESS:
+					//GET BY TASKS STATUS IN-PROGRESS (2)
 					taskShow = taskService.ListTasks(utils.ISQUERY, strings.ToLower(utils.STATUSFIELD), utils.LISTPROGRESS)
 				default:
 					fmt.Println(utils.OPTIONNOTVALID)

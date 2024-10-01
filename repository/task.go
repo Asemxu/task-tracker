@@ -34,7 +34,7 @@ type TaskRepository struct {
 }
 
 func (repo TaskRepository) AddDB(task models.Task) {
-	fmt.Println("Agregando una tarea...")
+	fmt.Println(utils.ADDINGTAKS)
 	err := repo.db.Insert(task)
 	if err != nil {
 		panic(err)
@@ -59,7 +59,7 @@ func (repo TaskRepository) GetAllDB(isQuery bool, field string, valueQuery strin
 		err = repo.db.Open(models.Task{}).Get().AsEntity(&tasks)
 	}
 	if err != nil {
-		if strings.Contains(err.Error(), "record not found") {
+		if strings.Contains(err.Error(), utils.DONTFOUNDTASK) {
 			return tasks
 		}
 		panic(err)
@@ -68,7 +68,7 @@ func (repo TaskRepository) GetAllDB(isQuery bool, field string, valueQuery strin
 }
 
 func (repo TaskRepository) UpdateDB(fieldName string, value string, idTask int) {
-	fmt.Print("Actualizando la tarea con ID: ")
+	fmt.Print(utils.UPDATINGTASK)
 	fmt.Println(idTask)
 	newValue := reflect.ValueOf(value).String()
 	var taskFounded = repo.GetSingleDB(idTask)
@@ -84,7 +84,7 @@ func (repo TaskRepository) UpdateDB(fieldName string, value string, idTask int) 
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("Actualizado con éxito")
+	fmt.Println(utils.SUCCESSUPDATE)
 }
 
 func (repo TaskRepository) DeleteDB(idTask float64) {
@@ -94,17 +94,17 @@ func (repo TaskRepository) DeleteDB(idTask float64) {
 	err := repo.db.Delete(taskDelete)
 
 	if err != nil {
-		fmt.Printf("No se logro eliminar el Task con el id ")
+		fmt.Printf(utils.CANTNOTDELETETASK)
 		fmt.Println(int(idTask))
 		panic(err)
 	}
 
-	fmt.Print("Se ah borrado el task con el Id ")
+	fmt.Print(utils.SUCCESSDELETE)
 	fmt.Print(idTask)
 }
 
 func (repo TaskRepository) GetDB(isQuery bool, field string, valueQuery string) []models.Task {
-	fmt.Println("Obteniendo todos los tasks...")
+	fmt.Println(utils.GETTINGALLTASKS)
 	var tasks = repo.GetAllDB(isQuery, field, valueQuery)
 	return tasks
 }

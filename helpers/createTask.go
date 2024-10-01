@@ -17,8 +17,6 @@ func CreateTask(arguments []string) models.Task {
 		description = arguments[1]
 	}
 	return models.Task{
-		//where use random id to more secutiry
-		// Id:          utils.GetId(),
 		Status:      strconv.Itoa(utils.MARKCREATED),
 		CreatedAt:   time.Now().String(),
 		UpdatedAt:   "",
