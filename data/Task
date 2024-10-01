@@ -1,0 +1,23 @@
+[
+	{
+		"id": 1,
+		"description": "pedrito querido y adorado 3",
+		"status": "1",
+		"createdAt": "2024-09-30 16:04:34.3467591 -0500 -05 m=+0.003969801",
+		"updatedAt": "2024-09-30 21:43:00.7523031 -0500 -05 m=+0.006237701"
+	},
+	{
+		"createdAt": "2024-09-30 20:04:49.4097754 -0500 -05 m=+0.005118801",
+		"description": "hola nuevo",
+		"id": 2,
+		"status": "0",
+		"updatedAt": ""
+	},
+	{
+		"createdAt": "2024-09-30 20:05:19.8984133 -0500 -05 m=+0.004556601",
+		"description": "hola nuevo  test",
+		"id": 3,
+		"status": "0",
+		"updatedAt": ""
+	}
+]
