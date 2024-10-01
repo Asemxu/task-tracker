@@ -86,4 +86,4 @@ go run build -o task-cli.exe
 ./task-cli.exe add test
 
 
-This proyect is submit in [Github](https://github.com/Asemxu/task-tracker)
+This project is submit in [Github](https://github.com/Asemxu/task-tracker) and this [project url](https://roadmap.sh/projects/task-tracker)
