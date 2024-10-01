@@ -74,8 +74,16 @@ By the end of this project, you will have developed a practical tool that can he
 
 # To run use
 go run build -o task-cli
+
+# Another
 go run build -o task-cli.exe
 
 
+# Execute
 ./task-cli add test
+
+# Execute another
 ./task-cli.exe add test
+
+
+This proyect is submit in [Github](https://github.com/Asemxu/task-tracker)
