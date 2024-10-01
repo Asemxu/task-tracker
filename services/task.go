@@ -3,6 +3,7 @@ package services
 import (
 	"task-tracker/models"
 	"task-tracker/repository"
+	"task-tracker/utils"
 )
 
 type TaskServiceFunc interface {
@@ -22,7 +23,7 @@ func NewTaskService(repo repository.TaskRepository) TaskService {
 }
 
 func (task TaskService) AddTask(taskValue models.Task) {
-	taskValue.Id = float64(len(task.ListTasks()) + 1)
+	taskValue.Id = float64(len(task.ListTasks(utils.NOTQUERY, utils.EMPTYVALUE, utils.EMPTYVALUE)) + 1)
 	task.repo.AddDB(taskValue)
 }
 
@@ -38,6 +39,6 @@ func (task TaskService) MarkTask(isMarkProgress bool, isMarkDone bool) {
 
 }
 
-func (task TaskService) ListTasks() []models.Task {
-	return task.repo.GetDB()
+func (task TaskService) ListTasks(isQuery bool, field string, valueQuery string) []models.Task {
+	return task.repo.GetDB(isQuery, field, valueQuery)
 }
